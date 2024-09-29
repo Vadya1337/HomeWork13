@@ -23,6 +23,7 @@ public class Book {
     public Author getAuthor() {
         return this.author;
     }
+    @Override
     public String toString(){
         return "" + name + "" + yearRelease + "" + author;
     }
