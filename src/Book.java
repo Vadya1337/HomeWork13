@@ -24,8 +24,9 @@ public class Book {
         return this.author;
     }
     public String toString(){
-        return "" + this.name + "" + yearRelease;
+        return "" + name + "" + yearRelease + "" + author;
     }
+    @Override
     public boolean equals(Object other) {
         if (other == this) return true;
         if (other == null || other.getClass() != getClass()) return false;
@@ -34,6 +35,9 @@ public class Book {
                 author.equals(otherBook.author) &&
                 yearRelease == otherBook.yearRelease;
     }
-
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name,author,yearRelease);
+    }
 
 }
